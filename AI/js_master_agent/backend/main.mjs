@@ -4,7 +4,7 @@ import OpenAI from "openai";
 // mjs  es6 模块化 
 
 const client = new OpenAI({
-  apiKey: "sk-EotDnSmaUpIchUFfXMOpmx0QBHUPe43c2Rr8UOUiEzBwCYUJ",
+  apiKey: "",
   baseURL: "https://api.302.ai/v1"
 })
 
