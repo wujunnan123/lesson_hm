@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EditInPlace 哔哩哔哩用户体验打造</title>
+</head>
+<body>
+    <div id="app">
+        <div id="ep1">
+            <spen id="content">男德学院一等奖学金</spen>
+            <input type="text" id="input" value="男德学院一等奖学金">
+            <input type="button" id="save" value="Save">
+            <input type="button" id="cancel" value="Cancel">
+        </div>
+    </div>
+    <script>
+        // DOM 在js中是html的节点对象 动态操作html
+     const content = document.getElementById('content');
+     const input = document.getElementById('input');
+     const save = document.getElementById('save');
+     const cancel = document.getElementById('cancel');
+    // 文本状态
+    function convertToText() {
+        input.style.display = 'none';
+        save.style.display = 'none';
+        cancel.style.display = 'none';
+        content.style.display = 'inline';
+    }
+    // 编辑状态
+    function convertToEdit() {
+        input.style.display = 'inline';
+        save.style.display = 'inline';
+        cancel.style.display = 'inline';
+        content.style.display = 'none';
+    }
+
+    convertToText();
+    // 点击文本 进入编辑状态
+    content.addEventListener('click', function() {
+        input.value = content.innerText;
+        convertToEdit();
+    });
+
+    // 点击保存 保存文本编辑内容
+    save.addEventListener('click', function() {
+        content.innerText = input.value;
+        convertToText();
+    });
+    </script>
+</body>
+</html>
