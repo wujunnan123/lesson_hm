@@ -12,6 +12,7 @@ Person.prototype = {
 }
 
 const xck = new Person('肖总',18)
+console.log(xck);
 xck.eat();
 const xql = new Person('肖青林',19)
 xql.eat();
