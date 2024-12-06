@@ -18,12 +18,9 @@
   <p>这是第9个段落</p>
   <p>这是第10个段落</p>
   <script>
-    const nodeList = document.getElementsByTagName('p');
-    const nodeArr = document.querySelectorAll('p');
-    // console.log(nodeList,nodeArr);
-    // nodeArr.forEach( node=> {
-    //   console.log(node.__proto__.constructor);
-    // })
+    const nodeArr = document.getElementsByTagName('p');
+    const nodeList = document.querySelectorAll('p');
+    console.log(nodeArr,nodeList);
     nodeList.join(',')
   </script>
 </body>
