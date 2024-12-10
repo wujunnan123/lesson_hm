@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+<script>
+var a = {
+  name: 'Cherry',
+  // call apply 有区别
+  // call 参数一个个给                 call(thisBinder,a,b,c,......参数)   
+  // apply 参数一次性给 以数组的形式给   apply(thisBinder,[a,b,c,......参数])
+  fn: function(a, b) {
+    console.log(this.name)
+    // a [1,2] + b undefined
+    // + 两边都是数字就是加法，如果不是，就是连接运算符
+    console.log(a + b)
+  }
+}
+// a.fn(1, 2)
+var b = a.fn; // 普通函数
+// 指定this
+// 立即执行
+// 参数
+console.log(b.apply(a, [1, 2]))
+console.log(b.call(a, [1, 2]))
+console.log(b.call(a, 1, 2))
+console.log(b.bind(a)(1,2))
+</script>
+</body>
+</html>
